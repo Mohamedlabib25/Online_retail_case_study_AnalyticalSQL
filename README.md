@@ -5,7 +5,7 @@ This project is about using **analytical SQL** to study the business of an onlin
 
 Skills used : **Analytical SQL** 
 
-In brief i managed to aggregate thousands of records [https://drive.google.com/file/d/1t9z8zhdY1XMz1tpi7ElZW1v0CeGzoQD8/view?usp=sharing](url)  into  few records which will be suitable for managerial level here is an example
+In brief i managed to to answer complicated businness questions by  aggregating thousands of records and using analytical functions like :  **over() partition by() lead lag ntile **    [https://drive.google.com/file/d/1t9z8zhdY1XMz1tpi7ElZW1v0CeGzoQD8/view?usp=sharing](url)  into  few records which will be suitable for managerial level here is an example
   
 
 
