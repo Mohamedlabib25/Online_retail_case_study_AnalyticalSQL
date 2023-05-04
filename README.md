@@ -3,7 +3,7 @@ Customers has purchasing transaction that we shall be monitoring to get intuitio
 
 This project is about using **analytical SQL** to study the business of an online retail company, so the first step that u want to explore the dataset for their transactions and to ask relevant questions that can help the company understand more about the behaviors if their customers and answering business questions so they can increase their revenue 
 
-Skills learned : **Analytical SQL** 
+Skills used : **Analytical SQL** 
 
 In brief i managed to aggregate thousands of records [https://drive.google.com/file/d/1t9z8zhdY1XMz1tpi7ElZW1v0CeGzoQD8/view?usp=sharing](url)  into  few records which will be suitable for managerial level here is an example
   
