@@ -164,7 +164,7 @@ SELECT CUSTOMER_ID ,recency,frequency,Monetary,recency_score, F_M_score, CASE
 #Q3
 
 
-1
+#1
 SELECT DISTINCT(cust_id), 
        -- Select distinct customer IDs and calculate the maximum consecutive days between transactions for each customer
        (MAX(to_date(INVOICEDATE, 'YYYY-MM-DD')) OVER (PARTITION BY cust_id) 
@@ -184,7 +184,7 @@ FROM Transactions;
 
 
 
-2-
+#2-
 WITH CUST_DETAILS AS( 
 SELECT CUST_ID , to_date( INVOICEDATE,'YYYY-MM-DD') INVOICEDATE ,
  SUM(PRICE) OVER (PARTITION BY CUST_ID ORDER BY to_date( INVOICEDATE,'YYYY-MM-DD')   ROWS BETWEEN UNBOUNDED preceding  AND CURRENT ROW ) AS TOTAL_TO_DAY
