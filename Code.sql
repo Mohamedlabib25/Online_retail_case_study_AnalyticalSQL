@@ -1,6 +1,6 @@
-Question 1
-Query 1 
-Business meaning :   Total income per month(13 months ) and comparing  with pervious month and then calculating the amount of change in income and the percent and getting the rank of each month , we may need to know what is the most months that gives us so much income than others
+#Question 1
+#Query 1 
+#Business meaning :   Total income per month(13 months ) and comparing  with pervious month and then calculating the amount of change in income and the percent and getting the rank of each month , we may need to know what is the most months that gives us so much income than others
 Select
     to_char(to_date( INVOICEDATE,'MM/DD/YYYY HH24:MI'),'MON YYYY' ) AS Month , 
     sum( QUANTITY * PRICE)  as  Total_Income ,
@@ -17,9 +17,9 @@ ORDER BY TO_DATE(to_char(to_date( INVOICEDATE,'MM/DD/YYYY HH24:MI'),'MON YYYY' )
 
 
 
-Query 2-
+#Query 2-
 
-Bussines meaning :  Studying the most hours in the day in terms of the total income and number of invoices  in each hour , then ranking  hours depending on first total income and second on number of invoices   then categorizing the hours  depending on both  invoices_Rank  and Income_Rank to differentiate among the value for each hour  so we may need to increase  customer service agents in these hours  
+#Bussines meaning :  Studying the most hours in the day in terms of the total income and number of invoices  in each hour , then ranking  hours depending on first total income and second on number of invoices   then categorizing the hours  depending on both  invoices_Rank  and Income_Rank to differentiate among the value for each hour  so we may need to increase  customer service agents in these hours  
 
 WITH HOUR_DETAILS1 AS (
 select invoice ,  to_date( INVOICEDATE,'MM/DD/YYYY HH24:MI') as date1,sum( QUANTITY * PRICE)  as  Total_Income1 
@@ -44,9 +44,9 @@ ORDER BY invoice  )
 
 
  
-Query 3 –
+#Query 3 –
 
-Business meaning : grouping customers into two groups and getting the income and number of custmoers and invoices per group ,The first group contain the most 20% customers in terms of their income and the second group contain the rest of customers (last 80% of customers) , then studying each group to know how much each group participates in the total sales .
+#Business meaning : grouping customers into two groups and getting the income and number of custmoers and invoices per group ,The first group contain the most 20% customers in terms of their income and the second group contain the rest of customers (last 80% of customers) , then studying each group to know how much each group participates in the total sales .
 
 
 with customer_total as (
@@ -74,8 +74,8 @@ SELECT customer_id,count(1) as number_of_invoices ,SUM(QUANTITY*PRICE) AS Sales,
 
 
 
-Query4
-Business meaning : analyzing the data for each stock code by calculating the total sales , total quantity and number of invoices for each   the totalsales and nmber of invoices for each stockcode  then ranking them in these terms then finding the correlation between the total sales and both number of invoices and total quantity  for each stock code 
+#Query4
+#Business meaning : analyzing the data for each stock code by calculating the total sales , total quantity and number of invoices for each   the totalsales and nmber of invoices for each stockcode  then ranking them in these terms then finding the correlation between the total sales and both number of invoices and total quantity  for each stock code 
 
 SELECT stockcode,
 SUM(QUANTITY*PRICE) AS total_Sales,
@@ -93,9 +93,15 @@ ORDER BY total_Sales DESC
 
  
 
-It sounds like there is a good relationship between the total quantity and total sales , there is also a moderate relationship between total sales and number of invoices.
-Query 5
-Business meaning : here we study the relation between the customer and the sales and stockcode by calculating the total sales and total number of orders and then getting the most valuable stockcode for each customer(in terms of the income from this stockcode) and getting the number of orders that have this stock.
+
+#It sounds like there is a good relationship between the total quantity and total sales , there is also a moderate relationship between total sales and number of invoices.
+
+
+
+#Query 5
+#Business meaning : here we study the relation between the customer and the sales and stockcode by calculating the total sales and total number of orders and then getting the most valuable stockcode for each customer(in terms of the income from this stockcode) and getting the number of orders that have this stock.
+
+
 WITH customer_SALES AS (
   SELECT 
     Customer_ID, SUM(Quantity * Price) AS total_sales,
@@ -122,7 +128,7 @@ order by S.total_sales desc;
 
  
 
-Q2
+#Q2
 
  with CUSTOMER_details as (
 SELECT CUSTOMER_ID ,
@@ -155,7 +161,9 @@ SELECT CUSTOMER_ID ,recency,frequency,Monetary,recency_score, F_M_score, CASE
 
 
 
-Q3
+#Q3
+
+
 1
 SELECT DISTINCT(cust_id), 
        -- Select distinct customer IDs and calculate the maximum consecutive days between transactions for each customer
